@@ -9,8 +9,18 @@ def get_book_text(path):
     with open(path) as f:
         return f.read()
     
-def get_num_words(book):
-    words = book.split()
+def get_num_words(text):
+    words = text.split()
     return len(words)
+
+def get_num_letters(text):
+    chars = {}
+    for char in text:
+        char = char.lower()
+        if not char in chars:
+            chars[char] = 1
+        else:
+            chars[char] += 1
+    return chars
 
 main()
